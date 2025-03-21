@@ -12,7 +12,7 @@ const router = express.Router();
 
 
 router.post("/create-admin", createAdminUser);
-router.post("/create-user", createUser);
+router.post("/create-user", authMiddleware,createUser);
 router.put("/update/profile/:adminId", authMiddleware,updateAdminProfile);
 router.get("/fetch-all-user", authMiddleware, fetchAllUsers);
 router.get("/user/all-documents/:userId", authMiddleware, fetchUserDocuments);

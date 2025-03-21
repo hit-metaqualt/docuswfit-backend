@@ -8,7 +8,7 @@ const UserSchema = new mongoose.Schema({
   age: { type: Number },
   gender: { type: String, enum: ["Male", "Female", "Other"], default: "" }, 
   adminId: { type: mongoose.Schema.Types.ObjectId, ref: "Admin", required: true },
-  lastInteraction: { type: Number, default: 0 },
+  lastInteraction: { type: String, default: "idle" }, 
 }, { timestamps: true });
 
 module.exports = mongoose.model("User", UserSchema);
